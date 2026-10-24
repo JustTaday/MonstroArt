@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eae9e7">
+  <title>{{ 'С возвращением!' if mode == 'login' else 'Создать аккаунт' }} - MonstroArt</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="mascot-panel" aria-label="Маскоты MonstroArt">
+      <a class="back-brand" href="{{ url_for('index') }}" aria-label="MonstroArt - на главную">
+        <svg viewBox="0 0 104 88" aria-hidden="true"><path d="M8 12 Q7 5 14 9 L34 25 Q51 16 70 25 L90 9 Q97 5 96 13 L96 52 Q96 78 70 82 Q52 85 34 82 Q8 78 8 52 Z" fill="currentColor"/></svg>
+        <span>MonstroArt</span>
+      </a>
+      <div class="mascot-scene" aria-hidden="true">
+        <img class="auth-monster monster-pink" fetchpriority="high" loading="eager" decoding="sync" src="{{ url_for('static', filename='assets/mascots/pink.svg') }}" alt="">
+        <img class="auth-monster monster-smile" fetchpriority="high" loading="eager" decoding="sync" src="{{ url_for('static', filename='assets/mascots/smile.svg') }}" alt="">
+        <img class="auth-monster monster-fluff" src="{{ url_for('static', filename='assets/mascots/fluff.svg') }}" alt="">
+        <img class="auth-monster monster-round" src="{{ url_for('static', filename='assets/mascots/round.svg') }}" alt="">
+      </div>
+      <p class="mascot-caption">Каждое достижение начинается с одного шага.</p>
+    </section>
+
+    <section class="form-panel">
+      <div class="form-panel-top">
+        <a class="mobile-brand" href="{{ url_for('index') }}">
+          <svg viewBox="0 0 104 88" aria-hidden="true"><path d="M8 12 Q7 5 14 9 L34 25 Q51 16 70 25 L90 9 Q97 5 96 13 L96 52 Q96 78 70 82 Q52 85 34 82 Q8 78 8 52 Z" fill="currentColor"/></svg><span>MonstroArt</span>
+        </a>
+        <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Переключить тему"><span class="theme-icon">☾</span></button>
+      </div>
+      <div class="form-content">
+        <div class="welcome">
+          <svg class="brand-mark" viewBox="0 0 104 88" aria-hidden="true"><path d="M8 12 Q7 5 14 9 L34 25 Q51 16 70 25 L90 9 Q97 5 96 13 L96 52 Q96 78 70 82 Q52 85 34 82 Q8 78 8 52 Z" fill="currentColor"/></svg>
+          <h1>{{ 'С возвращением!' if mode == 'login' else 'Создать аккаунт' }}</h1>
+          <p>{{ 'Пожалуйста, введите свои данные' if mode == 'login' else 'Конкурсы и мероприятия в одном удобном месте для Вас' }}</p>
+        </div>
+        <form class="auth-form" method="post" action="{{ url_for('login') if mode == 'login' else url_for('register') }}" novalidate>
+          <input type="hidden" name="csrf_token" value="{{ session['csrf_token'] }}">
+          {% if mode == 'login' %}<input type="hidden" name="next" value="{{ request.args.get('next', '') }}">{% endif %}
+          {% if mode == 'register' %}
+          <label class="field"><span>Имя и фамилия</span><input name="name" type="text" autocomplete="name" placeholder="Как к тебе обращаться" minlength="2" maxlength="70" value="{{ form_name|default('') }}" required></label>
+          {% endif %}
+          <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" placeholder="{{ 'Введите свой Email' if mode == 'login' else 'Введите Email' }}" maxlength="254" value="{{ form_email|default('') }}" required></label>
+          <label class="field"><span>Password</span><span class="password-wrap"><input name="password" type="password" autocomplete="{{ 'current-password' if mode == 'login' else 'new-password' }}" placeholder="{{ 'Введите пароль' if mode == 'login' else 'Придумайте пароль (от 8 символов)' }}" minlength="8" required><button class="password-toggle" type="button" aria-label="Показать пароль"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.2-6 9.5-6 9.5 6 9.5 6-3.2 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.8"/></svg></button></span></label>
+          {% if mode == 'register' %}
+          <label class="field"><span>Confirm password</span><span class="password-wrap"><input name="confirm_password" type="password" autocomplete="new-password" placeholder="Подтвердите пароль" minlength="8" required><button class="password-toggle" type="button" aria-label="Показать пароль"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.2-6 9.5-6 9.5 6 9.5 6-3.2 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.8"/></svg></button></span></label>
+          <label class="consent"><input type="checkbox" name="consent" required><span>Я соглашаюсь с <a href="{{ url_for('terms') }}">условиями использования</a> и даю согласие на обработку персональных данных.</span></label>
+          {% else %}
+          <div class="form-options"><label class="remember"><input type="checkbox" name="remember"> <span>Запомнить меня</span></label><a href="#forgot" data-static-link>Забыли пароль?</a></div>
+          {% endif %}
+          <button class="submit-button" type="submit">{{ 'Войти' if mode == 'login' else 'Создать аккаунт' }}</button>
+          <button class="google-button" type="submit" formnovalidate formaction="{{ url_for('google_oauth_placeholder') }}"><span class="google-g" aria-hidden="true">G</span>{{ 'Войти через Google' if mode == 'login' else 'Создать аккаунт через Google' }}</button>
+        </form>
+        <div class="switch-auth">{% if mode == 'login' %}Ещё нет аккаунта? <a href="{{ url_for('register') }}">Создать аккаунт</a>{% else %}Уже есть аккаунт? <a href="{{ url_for('login') }}">Войти</a>{% endif %}</div>
+      </div>
+      <div class="form-footer"><span class="footer-line"></span><span class="footer-dots"><i></i><i></i><i></i></span><span class="footer-line"></span><p>MonstroArt.example@gmail.com</p></div>
+    </section>
+  </main>
+  <div class="toast-stack" aria-live="polite">{% with messages = get_flashed_messages(with_categories=true) %}{% for category, message in messages %}<div class="toast toast-{{ category }}">{{ message }}</div>{% endfor %}{% endwith %}</div>
+  <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body></html>

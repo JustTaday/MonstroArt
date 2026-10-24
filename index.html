@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f6">
+  <title>MonstroArt — Портал достижений и конкурсов</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="MonstroArt">
+    <span class="brand-mark brand-cat" aria-hidden="true"><svg viewBox="0 0 104 88" focusable="false"><path d="M8 12 Q7 5 14 9 L34 25 Q51 16 70 25 L90 9 Q97 5 96 13 L96 52 Q96 78 70 82 Q52 85 34 82 Q8 78 8 52 Z" fill="currentColor"/></svg></span><span>MonstroArt</span>
+  </a>
+  <nav class="nav" aria-label="Главная навигация">
+    <a href="#contests">Конкурсы и олимпиады</a><a href="#profile">Профиль</a><a href="#rating">Рейтинг</a><a href="#how">Как это работает</a>
+  </nav>
+  <a class="button button-dark header-login" href="#login">Войти <span>↗</span></a>
+  <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+</header>
+
+<main id="top">
+  <section class="hero section-wrap">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span> ПОРТАЛ ДОСТИЖЕНИЙ И КОНКУРСОВ</div>
+      <h1>Твои идеи.<br>Твои <span>победы.</span></h1>
+      <p class="lead">Олимпиады, конкурсы в одном удобном месте для тебя.</p>
+      <div class="actions"><a class="button button-dark" href="#profile">Личный профиль <span>↗</span></a><a class="button button-light" href="#rating">Смотреть рейтинг <span>↗</span></a></div>
+      <p class="micro-note">Зайди и проверь, и пойми что любое обучение может стать интересным при правильном подходе.</p>
+    </div>
+    <div class="mascot-stage figma-mascots" aria-label="Интерактивные маскоты MonstroArt">
+      <button class="mascot-hit mascot-pink" data-mascot type="button" aria-label="Розовый одноглазый маскот"><img src="https://www.figma.com/api/mcp/asset/500bc91d-4e96-4713-b6dd-c0f2bb9b36a1/6f929.svg" alt=""></button>
+      <button class="mascot-hit mascot-smile" data-mascot type="button" aria-label="Улыбающийся маскот"><img src="https://www.figma.com/api/mcp/asset/500bc91d-4e96-4713-b6dd-c0f2bb9b36a1/3b784.svg" alt=""></button>
+      <button class="mascot-hit mascot-fluff" data-mascot type="button" aria-label="Бирюзовый пушистый маскот"><img src="https://www.figma.com/api/mcp/asset/500bc91d-4e96-4713-b6dd-c0f2bb9b36a1/aed0a.svg" alt=""></button>
+      <button class="mascot-hit mascot-round" data-mascot type="button" aria-label="Синий круглый маскот"><img src="https://www.figma.com/api/mcp/asset/500bc91d-4e96-4713-b6dd-c0f2bb9b36a1/cc014.svg" alt=""></button>
+    </div>
+    <div class="hero-bottom"><span>Каждый шаг вперёд заслуживает места в истории.</span><div><span>Дипломы</span><span>Олимпиады</span><span>Конкурсы</span></div></div>
+  </section>
+
+  <section class="portfolio section-wrap" id="profile">
+    <div class="section-copy">
+      <p class="section-kicker">Личный профиль</p><h2>Не просто грамоты.<br><span class="portfolio-heading-line">История твоего роста.</span></h2>
+      <p class="muted">Всё, над чем ты работал, - в одном месте. Сохраняй результаты и возвращайся к ним, когда планируешь следующий шаг.</p>
+      <div class="feature-list">
+        <div class="feature"><span class="feature-num">01</span><div><h3>Проходи олимпиады</h3><p>Проходишь олимпиаду, приходят результаты</p></div></div>
+        <div class="feature"><span class="feature-num">02</span><div><h3>Олимпиада попадает в твой профиль</h3><p>Следи за прогрессом и развивайся</p></div></div>
+        <div class="feature"><span class="feature-num">03</span><div><h3>Следи за своим прогрессом</h3><p>Смотри итоги, прогрессы олимпиад и соревнуйся с другими</p></div></div>
+      </div>
+      <a class="text-link" href="#login">Перейти в портфолио <span>↗</span></a>
+    </div>
+    <div class="portfolio-card">
+      <div class="card-top"><span>ПОРТФОЛИО УЧЕНИКА</span><span class="status-pill"><i></i> Пример профиля</span></div>
+      <div class="student"><div class="avatar" aria-label="Аватар Мусина Тимура">МТ</div><div><h3>Мусин Тимур</h3><p>6 А Класс · Математика</p></div><button class="dots" aria-label="Дополнительные действия">···</button></div>
+      <div class="stats"><div><strong>6</strong><span>олимпиад</span></div><div><strong>3</strong><span>диплома</span></div><div><strong>455</strong><span>баллов</span></div></div>
+      <div class="tabs" role="tablist" aria-label="Разделы портфолио"><button class="tab active" id="tab-achievements" role="tab" aria-selected="true" aria-controls="portfolio-detail" data-tab="achievements">Достижения</button><button class="tab" id="tab-activity" role="tab" aria-selected="false" aria-controls="portfolio-detail" data-tab="activity">Конкурсы</button></div>
+      <div class="achievement" id="portfolio-detail" role="tabpanel" aria-labelledby="tab-achievements"><div class="achievement-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4.5 29.2 15l11.6 1.7-8.4 8.2 2 11.6L24 31l-10.4 5.5 2-11.6-8.4-8.2L18.8 15 24 4.5Z" fill="currentColor"/><circle cx="24" cy="23" r="6" fill="#fff"/></svg></div><div class="achievement-content"><div class="achievement-heading"><span class="tag">МАТЕМАТИКА</span><span class="achievement-date">18 окт. 2026</span></div><h4>Олимпиада по математике</h4><p>Муниципальный этап <span class="achievement-separator">·</span> Призёр</p><div class="achievement-foot"><span class="award"><i></i> Призёр</span><b>+80 <span>баллов</span></b></div></div></div>
+      <div class="card-bottom"><span>Последнее обновление: сегодня</span><a href="#login">Все достижения ↗</a></div>
+    </div>
+  </section>
+
+  <section class="rating-section" id="rating"><div class="section-wrap">
+    <div class="section-heading"><div><p class="section-kicker"></p><h2>У каждого - свой путь к вершине.</h2></div><p class="muted">Рейтинг по твоим достижениям, а не по оценкам</p></div>
+    <div class="rating-panel"><div class="rating-toolbar"><div class="filter-group" role="group" aria-label="Фильтр предмета"><button class="filter active" data-subject="Все предметы">Все предметы</button><button class="filter" data-subject="Физика">Физика</button><button class="filter" data-subject="Математика">Математика</button><button class="filter" data-subject="Информатика">Информатика</button></div><div class="selectors"><select aria-label="Класс"><option>Все классы</option><option>6 класс</option><option>7 класс</option><option>8 класс</option></select><select aria-label="Учебный год"><option>2025–2026</option><option>2024–2025</option></select></div></div>
+      <div class="table-wrap"><table><thead><tr><th>МЕСТО</th><th>УЧЕНИК</th><th>КЛАСС</th><th>ПРЕДМЕТ</th><th>БАЛЛЫ</th></tr></thead><tbody id="rating-rows">
+      <tr data-subject="Математика"><td><span class="rank rank-gold">01</span></td><td><span class="student-dot pink">Т</span> Мусин Тимур</td><td>6 А</td><td>Математика</td><td class="score">455</td></tr>
+      <tr data-subject="Информатика"><td><span class="rank rank-silver">02</span></td><td><span class="student-dot blue">А</span> Талипов Адай</td><td>6 А</td><td>Информатика</td><td class="score">610 <span>↗</span></td></tr>
+      <tr data-subject="Физика"><td><span class="rank rank-bronze">03</span></td><td><span class="student-dot lilac">М</span> Матвей Ядров</td><td>6 Б</td><td>Физика</td><td class="score">570 <span>↗</span></td></tr>
+      <tr data-subject="Математика"><td><span class="rank">04</span></td><td><span class="student-dot mint">М</span> Михаил Волков</td><td>7 А</td><td>Математика</td><td class="score">455 <span>↗</span></td></tr>
+      <tr data-subject="Информатика"><td><span class="rank">05</span></td><td><span class="student-dot peach">И</span> Илья Громов</td><td>7 Б</td><td>Информатика</td><td class="score">420 <span>↗</span></td></tr>
+      </tbody></table></div><div class="table-foot"><span>Показаны примеры результатов</span><a href="#login">Полный рейтинг ↗</a></div>
+    </div>
+  </div></section>
+
+  <section class="contests section-wrap" id="contests"><div class="section-heading"><div><p class="section-kicker">НОВЫЕ ВОЗМОЖНОСТИ</p><h2>Маленькие и большие<br><span>победы.</span></h2></div><p class="muted">Каждый конкурс — возможность узнать что-то новое и стать увереннее в своих силах.</p></div>
+    <div class="contest-grid">
+      <article class="contest-card math" tabindex="0" role="button" aria-label="Конкурс Юный математик">
+        <div class="contest-top"><span class="contest-label">Математика</span><span class="points">18 мая</span></div>
+        <div class="contest-score"><span class="line-icon medal-icon">♙</span><strong>+80</strong></div>
+        <p class="subject">КОНКУРС</p><h3>Конкурс “Юный математик”</h3>
+        <p class="contest-description">Муниципальный конкурс · Портал</p>
+        <div class="contest-bottom"><span>Матвей Ядров · 6 Б<br><small>Диплом</small></span><span class="verified">✓ Подтверждено</span></div>
+      </article>
+      <article class="contest-card physics" tabindex="0" role="button" aria-label="От гипотезы к собственному эксперименту">
+        <div class="contest-top"><span class="contest-label">Физика</span><span class="points">18 мая</span></div>
+        <div class="contest-score"><span class="line-icon flask-icon">♜</span><strong>+60</strong></div>
+        <p class="subject">ИССЛЕДОВАНИЕ</p><h3>От гипотезы к собственному эксперименту</h3>
+        <p class="contest-description">Конференция проектов · II место</p>
+        <div class="contest-bottom"><span>Сергей Иванов · 10 Б<br><small>Сертификат</small></span><span class="verified">✓ Подтверждено</span></div>
+      </article>
+      <article class="contest-card informatics" tabindex="0" role="button" aria-label="Алгоритм, который стал работающим проектом">
+        <div class="contest-top"><span class="contest-label">Информатика</span><span class="points">14 мая</span></div>
+        <div class="contest-score"><span class="line-icon code-icon">&lt;/&gt;</span><strong>+50</strong></div>
+        <p class="subject">ПРОЕКТ</p><h3>Алгоритм, который стал работающим проектом</h3>
+        <p class="contest-description">Командная работа · Финалист</p>
+        <div class="contest-bottom"><span>Талипов Адай, Мусин Тимур, Матвей Ядров · 6 А, 6 Б<br><small>Материалы проекта</small></span><span class="verified">✓ Подтверждено</span></div>
+      </article>
+    </div><a class="button button-light centered-button" href="#login">Смотреть все конкурсы <span>↗</span></a>
+  </section>
+
+  <section class="how-section" id="how"><div class="section-wrap"><div class="section-heading"><div><p class="section-kicker">ВМЕСТЕ К РЕЗУЛЬТАТУ</p><h2>Твой результат.<br><span>Общая забота.</span></h2></div><p class="muted">Ученик собирает достижения, а учитель помогает каждой победе найти своё место.</p></div>
+    <div class="role-grid"><article class="role-card role-student"><div><span class="role-label">ДЛЯ УЧЕНИКА</span><h3>Я — ученик</h3><p>Создавай конкурсы по разрешению учителя, соревнуйся и обучайся.</p><a href="#login">Войти в портфолио ↗</a></div><button class="role-mascot role-fluff" data-mascot type="button" aria-label="Бирюзовый маскот"><img src="https://www.figma.com/api/mcp/asset/500bc91d-4e96-4713-b6dd-c0f2bb9b36a1/aed0a.svg" alt=""></button></article>
+    <article class="role-card role-teacher"><div><span class="role-label">ДЛЯ УЧИТЕЛЯ</span><h3>Я — учитель</h3><p>Создаю конкурсы, администрирую баллы и помогаю ученикам развиваться.</p><a href="#login">Войти для проверки ↗</a></div><button class="role-mascot role-round" data-mascot type="button" aria-label="Синий маскот"><img src="https://www.figma.com/api/mcp/asset/500bc91d-4e96-4713-b6dd-c0f2bb9b36a1/cc014.svg" alt=""></button></article></div>
+    <div class="steps"><div><span>01</span><h3>Дождись разрешения</h3><p>Затем создаёт свой конкурс</p></div><div><span>02</span><h3>Дождись проверки</h3><p>Учитель сверит конкурс и добавит его.</p></div><div><span>03</span><h3>Увидь результат</h3><p>Ученики проходят ваш конкурс.</p></div></div>
+  </div></section>
+
+  <section class="final-cta section-wrap" id="login"><div class="cta-copy"><p class="section-kicker"></p><h2>Следующее достижение -<br>уже часть твоей <span>истории.</span></h2><p>Начни с того, чем гордишься. Мы поможем это сохранить.</p><div class="actions"><a class="button button-dark" href="#top">Войти в портфолио <span>↗</span></a><a class="button button-light" href="mailto:support@monstroart.example">Создать аккаунт</a></div></div><div class="cta-mascots" aria-label="Интерактивные маскоты">
+      <button class="cta-mascot cta-smile" data-mascot type="button" aria-label="Улыбающийся маскот"><img src="https://www.figma.com/api/mcp/asset/500bc91d-4e96-4713-b6dd-c0f2bb9b36a1/3b784.svg" alt=""></button>
+      <button class="cta-mascot cta-fluff" data-mascot type="button" aria-label="Бирюзовый маскот"><img src="https://www.figma.com/api/mcp/asset/500bc91d-4e96-4713-b6dd-c0f2bb9b36a1/aed0a.svg" alt=""></button>
+      <button class="cta-mascot cta-pink" data-mascot type="button" aria-label="Розовый маскот"><img src="https://www.figma.com/api/mcp/asset/500bc91d-4e96-4713-b6dd-c0f2bb9b36a1/6f929.svg" alt=""></button>
+      <button class="cta-mascot cta-round" data-mascot type="button" aria-label="Синий маскот"><img src="https://www.figma.com/api/mcp/asset/500bc91d-4e96-4713-b6dd-c0f2bb9b36a1/cc014.svg" alt=""></button>
+    </div></section>
+</main>
+<footer class="footer"><div class="footer-main"><div class="footer-about"><a class="brand" href="#top"><span class="brand-mark brand-cat" aria-hidden="true"><svg viewBox="0 0 104 88" focusable="false"><path d="M8 12 Q7 5 14 9 L34 25 Q51 16 70 25 L90 9 Q97 5 96 13 L96 52 Q96 78 70 82 Q52 85 34 82 Q8 78 8 52 Z" fill="currentColor"/></svg></span><span>MonstroArt</span></a><p>Олимпиады, достижения и конкурсы прямо в твоём телефоне.</p></div><div><h4>ПОРТАЛ</h4><a href="#contests">Конкурсы</a><a href="#rating">Рейтинг</a><a href="#profile">Портфолио</a></div><div><h4>ПОМОЩЬ</h4><a href="#how">Как это работает</a><a href="mailto:support@monstroart.example">Поддержка</a><a href="#login">Войти</a></div><div><h4>ЛИЧНЫЙ КАБИНЕТ</h4><a href="#login">Вход</a><a href="#login">Регистрация</a></div></div><div class="footer-bottom"><span>© 2026 MonstroArt · Ваши достижения</span><span>Сделано для школьных побед</span><a href="#privacy">Конфиденциальность</a></div></footer>
+<script src="script.js"></script>
+</body></html>
